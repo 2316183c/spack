@@ -54,7 +54,7 @@ class Zlib(Package):
                 flags.append('-g -O0')
                 flags = list(map(  # Fix to change all -O to -O0
                     lambda x: "-O0" if x.startswith('-O') else x, flags))
-            if '+optimize' in spec:
+            if '+optimize' in self.spec:
                 flags.append('-O2')  # TODO: Really only if no -O already set
         return (None, flags, None)
 
